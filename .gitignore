@@ -1,0 +1,9 @@
+Library/
+Temp/
+Builds/
+obj/
+QCAR
+.idea/
+**/JetBrains.Rider.Unity.Editor.Plugin.Repacked.*
+*.csproj
+*.sln

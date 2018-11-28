@@ -1,85 +1,77 @@
-﻿Shader "Planet Test/PlanetSurfaceShader"
-{
-	Properties
-	{
-		_MainTex ("Texture", 2D) = "white" {}
-		_HeightMaps ("Heightmaps", 2DArray) = "" {}
-		_GridWidth ("Heightmap grid width", Float) = 2
-		_GridHeight ("Heightmap grid height", Float) = 2
+﻿Shader "Planet Test/Lit planet shader" {
+	Properties {
+		_MainTex ("Ground texture", 2D) = "white" {}
+		_SnowTex ("Snow texture", 2D) = "white" {}
+		_SnowHeight ("Snow height", Range(0, 1)) = 0.8
+		_SnowEdgeWidth ("Snow edge width", Range(0, 0.1)) = 0.01
+		_Glossiness ("Smoothness", Range(0,1)) = 0.5
+		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_NormalMap ("Normal map", 2D) = "white" {}
+		_HeightMap ("Height map", 2D) = "white" {}
+		_HeightMapMidpoint ("Heightmap colour midpoint", Range(0, 1)) = 0.5
 		_Offset ("Offset amount", Float) = 1
 	}
-	SubShader
-	{
+	SubShader {
 		Tags { "RenderType"="Opaque" }
-		LOD 100
+		LOD 200
 
-        Pass {
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma target 5.0
-            #include "UnityCG.cginc"
+		CGPROGRAM
+		// Physically based Standard lighting model, and enable shadows on all light types
+		#pragma surface surf Standard fullforwardshadows vertex:vert
 
-            struct appdata {
-                float4 vertex : POSITION;
-                float4 tangent : TANGENT;
-                float3 normal : NORMAL;
-                float2 texcoord : TEXCOORD0;
-            };
+		// Use shader model 3.0 target, to get nicer looking lighting
+		#pragma target 3.0
 
-            struct v2f {
-                float2 uv : TEXCOORD0;
-                float4 vertex : SV_POSITION;
-            };
+		sampler2D _MainTex;
+		sampler2D _SnowTex;
+        sampler2D _HeightMap;
+        sampler2D _NormalMap;
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+		struct Input {
+			float2 uv_MainTex;
+			float2 uv_NormalMap;
+		};
 
-            UNITY_DECLARE_TEX2DARRAY(_HeightMaps);
-            float _GridWidth;
-            float _GridHeight;
+		half _Glossiness;
+		half _Metallic;
+		fixed4 _Color;
 
-            float _Offset;
+        float _Offset;
+        float _HeightMapMidpoint;
+        
+        float _SnowHeight;
+        float _SnowEdgeWidth;
+
+		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
+		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
+		// #pragma instancing_options assumeuniformscaling
+		UNITY_INSTANCING_BUFFER_START(Props)
+			// put more per-instance properties here
+		UNITY_INSTANCING_BUFFER_END(Props)
             
-            float3 toHeightMapUv(float2 uv) {
-                float2 mapSize = float2(_GridWidth, _GridHeight);
-                
-                // The UVs of the standard Unity sphere are upside down for our purposes where 0 = top
-                float2 flippedUv = float2(uv.x, 1 - uv.y);
-                
-                // Figure out which grid square this UV falls under so we can figure out which height map
-                // to use
-                int2 mapCoords = floor(flippedUv * mapSize);
-
-                // Convert grid coordinates into an index into the array of height maps
-                float mapIndex = (_GridWidth * mapCoords.y) + mapCoords.x;
-                
-                // Adjust our original UV coordinates so they're relative to the section of the
-                // sphere we're dealing with
-                float2 relativeUv = (uv - mapCoords) * mapSize;
-
-                return float3(relativeUv, mapIndex);
-            }
-
-            v2f vert(appdata v) {
-                float3 heightUv = toHeightMapUv(v.texcoord.xy);
-                fixed4 height = UNITY_SAMPLE_TEX2DARRAY_LOD(_HeightMaps, heightUv, 0);
-                float4 vertex = v.vertex + (float4(v.normal.xyz, 0) * height.r * _Offset);
-
-                v2f o;
-                o.vertex = UnityObjectToClipPos(vertex);
-                o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
-
-                return o;
-            }
-            
-            fixed4 frag(v2f IN) : SV_Target {
-                v2f o;
-                float3 uv = toHeightMapUv(IN.uv);
-                fixed4 col = UNITY_SAMPLE_TEX2DARRAY(_HeightMaps, uv);
-                return col;
-            }
-            ENDCG
+        void vert(inout appdata_full v) {
+            fixed4 height = tex2Dlod(_HeightMap, float4(v.texcoord.xy, 0, 0));
+            v.vertex.xyz += v.normal * (height.r - _HeightMapMidpoint) * _Offset;
         }
+
+		void surf (Input IN, inout SurfaceOutputStandard o) {
+			// Albedo comes from a texture tinted by color
+			fixed4 surface = tex2D (_MainTex, IN.uv_MainTex);
+			fixed4 height = tex2D(_HeightMap, IN.uv_MainTex);
+			fixed4 snow = tex2D(_SnowTex, IN.uv_MainTex);
+			
+			float snowBlend = smoothstep(_SnowHeight, 1, height.r);
+			
+			o.Albedo = (surface.rgb * (1 - snowBlend)) + (snow.rgb * snowBlend);
+
+			// Metallic and smoothness come from slider variables
+			o.Metallic = _Metallic;
+			o.Smoothness = _Glossiness;
+			o.Normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
+//			o.Alpha = c.a;
+            o.Alpha = 1;
+		}
+		ENDCG
 	}
+	FallBack "Diffuse"
 }

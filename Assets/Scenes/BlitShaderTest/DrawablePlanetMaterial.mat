@@ -74,7 +74,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HeightMapMidpoint: 0
+    - _HeightMapMidpoint: 0.5
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -82,7 +82,7 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SnowEdgeWidth: 0.01
-    - _SnowHeight: 0.945
+    - _SnowHeight: 0.963
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0

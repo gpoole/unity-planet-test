@@ -61,7 +61,6 @@
 			fixed4 snow = tex2D(_SnowTex, IN.uv_MainTex);
 			
 			float snowBlend = smoothstep(_SnowHeight, 1, height.r);
-			
 			o.Albedo = (surface.rgb * (1 - snowBlend)) + (snow.rgb * snowBlend);
 
 			// Metallic and smoothness come from slider variables

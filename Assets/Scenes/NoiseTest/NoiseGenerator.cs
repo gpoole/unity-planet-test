@@ -4,7 +4,7 @@ using LibNoise.Generator;
 using UnityEngine;
 
 namespace Scenes.NoiseGeneratorTest {
-    public class NoiseGenerator : MonoBehaviour {
+    public class NoiseGenerator : NoiseNode {
         [Flags]
         public enum NoiseType {
             Billow                = 1 << 0,
@@ -19,9 +19,6 @@ namespace Scenes.NoiseGeneratorTest {
 
         [SerializeField]
         private NoiseType _type;
-
-        [SerializeField]
-        private int _size;
         
         [SerializeField]
         [NoiseGeneratorMode(NoiseType.Billow | NoiseType.Cylinders | NoiseType.Perlin | NoiseType.RidgedMultifractal | NoiseType.Spheres | NoiseType.Voronoi)]
@@ -54,23 +51,22 @@ namespace Scenes.NoiseGeneratorTest {
         [SerializeField]
         [NoiseGeneratorMode(NoiseType.Billow | NoiseType.Perlin | NoiseType.RidgedMultifractal)]
         private QualityMode _quality;
-        
+
+        private ModuleBase _generator;
+
+        public override ModuleBase GetResult() {
+            return _generator;
+        }
+
         private void Start() {
-            GenerateTexture();
+            _generator = ConstructGenerator();
+        }
+        
+        private void OnValidate() {
+            _generator = ConstructGenerator();
         }
 
-        private void GenerateTexture() {
-            using (var noise = CreateGenerator()) {
-                var noiseRenderer = new Noise2D(_size, noise);
-                noiseRenderer.GeneratePlanar(-1, 1, -1, 1);
-                var texture = noiseRenderer.GetTexture();
-
-                var renderer = GetComponentInChildren<Renderer>();
-                renderer.sharedMaterial.SetTexture("_MainTex", texture);
-            }
-        }
-
-        private ModuleBase CreateGenerator() {
+        private ModuleBase ConstructGenerator() {
             switch (_type) {
                 case NoiseType.Billow:
                     return new Billow(_frequency, _lacunarity, _persistence, _octaves, _seed, _quality);

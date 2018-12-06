@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a89c36c30b2e940804d7efcccaf0bd, type: 3}
+  m_Name: SampleBillowCanvas
+  m_EditorClassIdentifier: 
+  editorStates:
+  - {fileID: 114848405261631082}
+  saveName: SampleBillowCanvas
+  savePath: Assets/Scenes/NoiseNodeTest/Graphs/SampleBillowCanvas.asset
+  livesInScene: 0
+  nodes:
+  - {fileID: 114310619527671806}
+  - {fileID: 114120084059746848}
+  - {fileID: 114214759638317974}
+  - {fileID: 114084170894088016}
+  - {fileID: 114066836517822436}
+  groups: []
+--- !u!114 &114066836517822436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d0ebcefff3404b92242d32c3cd005f, type: 3}
+  m_Name: Billow Noise
+  m_EditorClassIdentifier: 
+  position: {x: -656.30005, y: -324}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outputKnob: {fileID: 114735257761523446}
+  _frequency: 5
+  _lacunarity: 2
+  _persistence: 1
+  _octaves: 2
+  _seed: 20
+  _quality: 0
+--- !u!114 &114084170894088016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8993b4f55bab447e992939b8cb405a34, type: 3}
+  m_Name: Noise renderer
+  m_EditorClassIdentifier: 
+  position: {x: -69.740005, y: -307.36002}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inputKnob: {fileID: 114383356529026098}
+  outputKnob: {fileID: 114686675016739950}
+  _previewSize: 256
+--- !u!114 &114087019313532310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114310619527671806}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114383356529026098}
+  side: 2
+  sidePosition: 63
+  sideOffset: 0
+--- !u!114 &114120084059746848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4afe16fa339b445851f2d3834f75d8, type: 3}
+  m_Name: Texture Output
+  m_EditorClassIdentifier: 
+  position: {x: 202.65999, y: -286.5001}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inputKnob: {fileID: 114813437764809140}
+  savePath: /Users/greg/Projects/Experiments/PlanetTest/Assets/Scenes/NoiseNodeTest/Demos/BillowTest.png
+--- !u!114 &114160215456389214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: LHS
+  m_EditorClassIdentifier: 
+  body: {fileID: 114310619527671806}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114166815731368804}
+  side: 4
+  sidePosition: 28
+  sideOffset: 0
+--- !u!114 &114166815731368804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114214759638317974}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114160215456389214}
+  side: 2
+  sidePosition: 28
+  sideOffset: 0
+--- !u!114 &114214759638317974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d0ebcefff3404b92242d32c3cd005f, type: 3}
+  m_Name: Billow Noise
+  m_EditorClassIdentifier: 
+  position: {x: -655.44006, y: -506.76}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outputKnob: {fileID: 114166815731368804}
+  _frequency: 5
+  _lacunarity: 0
+  _persistence: 0
+  _octaves: 1
+  _seed: 0
+  _quality: 2
+--- !u!114 &114310619527671806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1621a8400b744a1eb4099eec70789067, type: 3}
+  m_Name: Add Noise
+  m_EditorClassIdentifier: 
+  position: {x: -349.5, y: -423.84003}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  lhsInputKnob: {fileID: 114160215456389214}
+  rhsInputKnob: {fileID: 114719916798958228}
+  outputKnob: {fileID: 114087019313532310}
+--- !u!114 &114383356529026098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Input
+  m_EditorClassIdentifier: 
+  body: {fileID: 114084170894088016}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114087019313532310}
+  side: 4
+  sidePosition: 28
+  sideOffset: 0
+--- !u!114 &114686675016739950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114084170894088016}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: Texture
+  _connections:
+  - {fileID: 114813437764809140}
+  side: 2
+  sidePosition: 46
+  sideOffset: 0
+--- !u!114 &114719916798958228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: RHS
+  m_EditorClassIdentifier: 
+  body: {fileID: 114310619527671806}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114735257761523446}
+  side: 4
+  sidePosition: 46
+  sideOffset: 0
+--- !u!114 &114735257761523446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114066836517822436}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114719916798958228}
+  side: 2
+  sidePosition: 28
+  sideOffset: 0
+--- !u!114 &114813437764809140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Texture
+  m_EditorClassIdentifier: 
+  body: {fileID: 114120084059746848}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: Texture
+  _connections:
+  - {fileID: 114686675016739950}
+  side: 4
+  sidePosition: 28
+  sideOffset: 0
+--- !u!114 &114848405261631082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
+  m_Name: MainEditorState
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 11400000}
+  parentEditor: {fileID: 0}
+  selectedNode: {fileID: 0}
+  panOffset: {x: 179.82, y: 265.49008}
+  zoom: 0.79

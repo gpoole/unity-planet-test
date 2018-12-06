@@ -10,7 +10,7 @@ namespace NodeEditorFramework.Standard
 	{
 		// Information about current instance
 		private static NodeEditorWindow _editor;
-		public static NodeEditorWindow editor { get { AssureEditor(); return _editor; } }
+		public static NodeEditorWindow editor { get { return _editor; } }
 		public static void AssureEditor() { if (_editor == null) OpenNodeEditor(); }
 
 		// Canvas cache

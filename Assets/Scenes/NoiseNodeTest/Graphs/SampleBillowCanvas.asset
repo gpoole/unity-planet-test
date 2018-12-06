@@ -12,18 +12,208 @@ MonoBehaviour:
   m_Name: SampleBillowCanvas
   m_EditorClassIdentifier: 
   editorStates:
-  - {fileID: 114848405261631082}
+  - {fileID: 114109302829927880}
   saveName: SampleBillowCanvas
   savePath: Assets/Scenes/NoiseNodeTest/Graphs/SampleBillowCanvas.asset
   livesInScene: 0
   nodes:
-  - {fileID: 114310619527671806}
-  - {fileID: 114120084059746848}
-  - {fileID: 114214759638317974}
-  - {fileID: 114084170894088016}
-  - {fileID: 114066836517822436}
+  - {fileID: 114246932573500500}
+  - {fileID: 114369507239582700}
+  - {fileID: 114228213139879720}
+  - {fileID: 114709847366586006}
+  - {fileID: 114011713786778930}
+  - {fileID: 114956440902134972}
+  - {fileID: 114517768558216824}
+  - {fileID: 114230964413043606}
+  - {fileID: 114559402964677088}
+  - {fileID: 114296941251740520}
   groups: []
---- !u!114 &114066836517822436
+--- !u!114 &114011713786778930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2522a3a27b054c0984819a7599a30344, type: 3}
+  m_Name: Cylinder pattern generator
+  m_EditorClassIdentifier: 
+  position: {x: -601.97, y: -24.540041}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outputKnob: {fileID: 114213890535915774}
+  _frequency: 2
+--- !u!114 &114033346321228076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114228213139879720}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections: []
+  side: 2
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114066592022763004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Right
+  m_EditorClassIdentifier: 
+  body: {fileID: 114709847366586006}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114813469052315018}
+  side: 4
+  sidePosition: 65.5
+  sideOffset: 0
+--- !u!114 &114079382429515062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Texture
+  m_EditorClassIdentifier: 
+  body: {fileID: 114559402964677088}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: Texture
+  _connections:
+  - {fileID: 114581690318899824}
+  side: 4
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114080898761117382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Left
+  m_EditorClassIdentifier: 
+  body: {fileID: 114709847366586006}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114531653872196112}
+  side: 4
+  sidePosition: 47.5
+  sideOffset: 0
+--- !u!114 &114109302829927880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
+  m_Name: MainEditorState
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  parentEditor: {fileID: 0}
+  selectedNode: {fileID: 114296941251740520}
+  panOffset: {x: 40.919975, y: 198.72003}
+  zoom: 1.36
+--- !u!114 &114153830264085726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Input
+  m_EditorClassIdentifier: 
+  body: {fileID: 114296941251740520}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: Texture
+  _connections:
+  - {fileID: 114581690318899824}
+  side: 4
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114213890535915774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114011713786778930}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114383880740772114}
+  side: 2
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114228213139879720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1621a8400b744a1eb4099eec70789067, type: 3}
+  m_Name: Add Noise
+  m_EditorClassIdentifier: 
+  position: {x: -199.87999, y: -469}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  lhsInputKnob: {fileID: 114347619744952560}
+  rhsInputKnob: {fileID: 114606703639328790}
+  outputKnob: {fileID: 114033346321228076}
+--- !u!114 &114230964413043606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8993b4f55bab447e992939b8cb405a34, type: 3}
+  m_Name: Noise renderer
+  m_EditorClassIdentifier: 
+  position: {x: -93.82001, y: -340.51004}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inputKnob: {fileID: 114572495984365070}
+  outputKnob: {fileID: 114581690318899824}
+  _previewSize: 128
+--- !u!114 &114246932573500500
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,31 +227,14 @@ MonoBehaviour:
   position: {x: -656.30005, y: -324}
   dynamicConnectionPorts: []
   backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  outputKnob: {fileID: 114735257761523446}
+  outputKnob: {fileID: 114286940959984202}
   _frequency: 5
   _lacunarity: 2
   _persistence: 1
   _octaves: 2
   _seed: 20
   _quality: 0
---- !u!114 &114084170894088016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8993b4f55bab447e992939b8cb405a34, type: 3}
-  m_Name: Noise renderer
-  m_EditorClassIdentifier: 
-  position: {x: -69.740005, y: -307.36002}
-  dynamicConnectionPorts: []
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  inputKnob: {fileID: 114383356529026098}
-  outputKnob: {fileID: 114686675016739950}
-  _previewSize: 256
---- !u!114 &114087019313532310
+--- !u!114 &114286940959984202
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,16 +245,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Output
   m_EditorClassIdentifier: 
-  body: {fileID: 114310619527671806}
+  body: {fileID: 114246932573500500}
   direction: 2
   maxConnectionCount: 1
   styleID: LibNoise.ModuleBase
-  _connections:
-  - {fileID: 114383356529026098}
+  _connections: []
   side: 2
-  sidePosition: 63
+  sidePosition: 28.5
   sideOffset: 0
---- !u!114 &114120084059746848
+--- !u!114 &114296941251740520
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,15 +261,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed4afe16fa339b445851f2d3834f75d8, type: 3}
-  m_Name: Texture Output
+  m_Script: {fileID: 11500000, guid: f07f3da6040b4e9e8b3d2803118a13c3, type: 3}
+  m_Name: Assign texture name
   m_EditorClassIdentifier: 
-  position: {x: 202.65999, y: -286.5001}
+  position: {x: 263.72003, y: -432.00998}
   dynamicConnectionPorts: []
   backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  inputKnob: {fileID: 114813437764809140}
-  savePath: /Users/greg/Projects/Experiments/PlanetTest/Assets/Scenes/NoiseNodeTest/Demos/BillowTest.png
---- !u!114 &114160215456389214
+  inputKnob: {fileID: 114153830264085726}
+  _textureName: Output
+--- !u!114 &114347619744952560
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,18 +278,56 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: LHS
+  m_Name: Left
   m_EditorClassIdentifier: 
-  body: {fileID: 114310619527671806}
+  body: {fileID: 114228213139879720}
   direction: 1
   maxConnectionCount: 0
   styleID: LibNoise.ModuleBase
   _connections:
-  - {fileID: 114166815731368804}
+  - {fileID: 114490015281552264}
   side: 4
-  sidePosition: 28
+  sidePosition: 28.5
   sideOffset: 0
---- !u!114 &114166815731368804
+--- !u!114 &114369507239582700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ccdaba5252409e8b7432624484a448, type: 3}
+  m_Name: Clamp value
+  m_EditorClassIdentifier: 
+  position: {x: -408, y: -529.2101}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inputKnob: {fileID: 114819028042158392}
+  outputKnob: {fileID: 114490015281552264}
+  _min: 0.5
+  _max: 0.9
+--- !u!114 &114383880740772114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Controller
+  m_EditorClassIdentifier: 
+  body: {fileID: 114709847366586006}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114213890535915774}
+  side: 4
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114490015281552264
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,16 +338,205 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Output
   m_EditorClassIdentifier: 
-  body: {fileID: 114214759638317974}
+  body: {fileID: 114369507239582700}
   direction: 2
   maxConnectionCount: 1
   styleID: LibNoise.ModuleBase
   _connections:
-  - {fileID: 114160215456389214}
+  - {fileID: 114347619744952560}
   side: 2
-  sidePosition: 28
+  sidePosition: 28.5
   sideOffset: 0
---- !u!114 &114214759638317974
+--- !u!114 &114517768558216824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1e7075edbb45e9b9ea6b4d751c876c, type: 3}
+  m_Name: Checker pattern generator
+  m_EditorClassIdentifier: 
+  position: {x: -646.33997, y: -171.87004}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  outputKnob: {fileID: 114531653872196112}
+--- !u!114 &114531653872196112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114517768558216824}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114080898761117382}
+  side: 2
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114559402964677088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47fecab80465e3440b73ae10c07550bb, type: 3}
+  m_Name: Texture Info
+  m_EditorClassIdentifier: 
+  position: {x: 216.12003, y: -281.68002}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  inputKnob: {fileID: 114079382429515062}
+--- !u!114 &114572495984365070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Input
+  m_EditorClassIdentifier: 
+  body: {fileID: 114230964413043606}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114795469638219784}
+  side: 4
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114581690318899824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114230964413043606}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: Texture
+  _connections:
+  - {fileID: 114153830264085726}
+  - {fileID: 114079382429515062}
+  side: 2
+  sidePosition: 47.5
+  sideOffset: 0
+--- !u!114 &114606703639328790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Right
+  m_EditorClassIdentifier: 
+  body: {fileID: 114228213139879720}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections: []
+  side: 4
+  sidePosition: 47.5
+  sideOffset: 0
+--- !u!114 &114709847366586006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99493e1b941945a7976593bd5f7ea226, type: 3}
+  m_Name: Blend Noise
+  m_EditorClassIdentifier: 
+  position: {x: -290.16995, y: -299.98}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  lhsInputKnob: {fileID: 114080898761117382}
+  rhsInputKnob: {fileID: 114066592022763004}
+  outputKnob: {fileID: 114795469638219784}
+  controllerInputKnob: {fileID: 114383880740772114}
+--- !u!114 &114795469638219784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114709847366586006}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114572495984365070}
+  side: 2
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114813469052315018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Output
+  m_EditorClassIdentifier: 
+  body: {fileID: 114956440902134972}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114819028042158392}
+  - {fileID: 114066592022763004}
+  side: 2
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114819028042158392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Input
+  m_EditorClassIdentifier: 
+  body: {fileID: 114369507239582700}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: LibNoise.ModuleBase
+  _connections:
+  - {fileID: 114813469052315018}
+  side: 4
+  sidePosition: 28.5
+  sideOffset: 0
+--- !u!114 &114956440902134972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,143 +550,10 @@ MonoBehaviour:
   position: {x: -655.44006, y: -506.76}
   dynamicConnectionPorts: []
   backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  outputKnob: {fileID: 114166815731368804}
-  _frequency: 5
-  _lacunarity: 0
-  _persistence: 0
+  outputKnob: {fileID: 114813469052315018}
+  _frequency: 20
+  _lacunarity: 2
+  _persistence: 1
   _octaves: 1
   _seed: 0
   _quality: 2
---- !u!114 &114310619527671806
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1621a8400b744a1eb4099eec70789067, type: 3}
-  m_Name: Add Noise
-  m_EditorClassIdentifier: 
-  position: {x: -349.5, y: -423.84003}
-  dynamicConnectionPorts: []
-  backgroundColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  lhsInputKnob: {fileID: 114160215456389214}
-  rhsInputKnob: {fileID: 114719916798958228}
-  outputKnob: {fileID: 114087019313532310}
---- !u!114 &114383356529026098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Input
-  m_EditorClassIdentifier: 
-  body: {fileID: 114084170894088016}
-  direction: 1
-  maxConnectionCount: 0
-  styleID: LibNoise.ModuleBase
-  _connections:
-  - {fileID: 114087019313532310}
-  side: 4
-  sidePosition: 28
-  sideOffset: 0
---- !u!114 &114686675016739950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Output
-  m_EditorClassIdentifier: 
-  body: {fileID: 114084170894088016}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: Texture
-  _connections:
-  - {fileID: 114813437764809140}
-  side: 2
-  sidePosition: 46
-  sideOffset: 0
---- !u!114 &114719916798958228
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: RHS
-  m_EditorClassIdentifier: 
-  body: {fileID: 114310619527671806}
-  direction: 1
-  maxConnectionCount: 0
-  styleID: LibNoise.ModuleBase
-  _connections:
-  - {fileID: 114735257761523446}
-  side: 4
-  sidePosition: 46
-  sideOffset: 0
---- !u!114 &114735257761523446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Output
-  m_EditorClassIdentifier: 
-  body: {fileID: 114066836517822436}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: LibNoise.ModuleBase
-  _connections:
-  - {fileID: 114719916798958228}
-  side: 2
-  sidePosition: 28
-  sideOffset: 0
---- !u!114 &114813437764809140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Texture
-  m_EditorClassIdentifier: 
-  body: {fileID: 114120084059746848}
-  direction: 1
-  maxConnectionCount: 0
-  styleID: Texture
-  _connections:
-  - {fileID: 114686675016739950}
-  side: 4
-  sidePosition: 28
-  sideOffset: 0
---- !u!114 &114848405261631082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
-  m_Name: MainEditorState
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 11400000}
-  parentEditor: {fileID: 0}
-  selectedNode: {fileID: 0}
-  panOffset: {x: 179.82, y: 265.49008}
-  zoom: 0.79

@@ -9,7 +9,7 @@ using UnityEngine.Experimental.PlayerLoop;
 
 namespace Scenes.NoiseNodeTest {
 	[Node (false, "Noise/Renderer")]
-    public class NoiseRenderer : Node {
+    public class NoiseRendererNode : Node {
         public const string ID = "NoiseRenderer";
 
         public override string GetID {

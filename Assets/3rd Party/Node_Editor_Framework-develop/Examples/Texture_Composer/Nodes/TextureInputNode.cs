@@ -12,7 +12,7 @@ namespace NodeEditorFramework.TextureComposer
 		public override string Title { get { return "Texture Input"; } }
 		public override Vector2 DefaultSize { get { return new Vector2(100, 100); } }
 
-		[ValueConnectionKnob("Texture", Direction.Out, "Texture")]
+		[ValueConnectionKnob("Texture", Direction.Out, typeof(Texture))]
 		public ValueConnectionKnob outputKnob;
 
 		public Texture2D tex;
@@ -40,7 +40,7 @@ namespace NodeEditorFramework.TextureComposer
 
 		public override bool Calculate()
 		{
-			outputKnob.SetValue(tex);
+			outputKnob.SetValue<Texture>(tex);
 			return true;
 		}
 	}

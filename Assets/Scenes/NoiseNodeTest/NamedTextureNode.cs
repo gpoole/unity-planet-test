@@ -22,7 +22,7 @@ namespace Scenes.NoiseNodeTest {
 
 		public Texture Texture => _texture;
         
-		[ValueConnectionKnob("Input", Direction.In, "Texture")]
+		[ValueConnectionKnob("Input", Direction.In, typeof(Texture))]
 		public ValueConnectionKnob inputKnob;
 
 		[SerializeField]
@@ -42,7 +42,7 @@ namespace Scenes.NoiseNodeTest {
 		}
 
 		public override bool Calculate() {
-            _texture = inputKnob.GetValue<Texture2D>();
+            _texture = inputKnob.GetValue<Texture>();
             return true;
         }
     }

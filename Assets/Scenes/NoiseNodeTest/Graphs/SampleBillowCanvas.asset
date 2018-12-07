@@ -24,7 +24,6 @@ MonoBehaviour:
   - {fileID: 114011713786778930}
   - {fileID: 114956440902134972}
   - {fileID: 114517768558216824}
-  - {fileID: 114230964413043606}
   - {fileID: 114559402964677088}
   - {fileID: 114296941251740520}
   groups: []
@@ -408,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Input
   m_EditorClassIdentifier: 
-  body: {fileID: 114230964413043606}
+  body: {fileID: 0}
   direction: 1
   maxConnectionCount: 0
   styleID: LibNoise.ModuleBase
@@ -428,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Output
   m_EditorClassIdentifier: 
-  body: {fileID: 114230964413043606}
+  body: {fileID: 0}
   direction: 2
   maxConnectionCount: 1
   styleID: Texture

@@ -5,7 +5,7 @@ using NodeEditorFramework.Utilities;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Clamp")]
+	[Node (false, "Noise/Operation/Clamp")]
     public class ClampNode : TransformerNode {
         private const string ID = "NoiseClampOperator";
 

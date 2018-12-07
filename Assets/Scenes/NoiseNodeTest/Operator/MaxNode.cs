@@ -3,7 +3,7 @@ using LibNoise.Operator;
 using NodeEditorFramework;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Max")]
+	[Node (false, "Noise/Operation/Max")]
     public class MaxNode : CombinerNode {
         private const string ID = "NoiseMaxOperator";
 

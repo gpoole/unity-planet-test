@@ -3,7 +3,7 @@ using LibNoise.Operator;
 using NodeEditorFramework;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Add")]
+	[Node (false, "Noise/Operation/Add")]
     public class AddNode : CombinerNode {
         private const string ID = "NoiseAddOperator";
 

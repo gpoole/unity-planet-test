@@ -5,7 +5,7 @@ using NodeEditorFramework.Utilities;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Rotate")]
+	[Node (false, "Noise/Operation/Rotate")]
     public class RotateNode : TransformerNode {
         private const string ID = "NoiseRotateOperator";
 

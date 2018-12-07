@@ -5,7 +5,7 @@ using NodeEditorFramework.Utilities;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Scale")]
+	[Node (false, "Noise/Operation/Scale")]
     public class ScaleNode : TransformerNode {
         private const string ID = "NoiseScaleOperator";
 
@@ -16,13 +16,13 @@ namespace Scenes.NoiseNodeTest.Operator {
         public override Vector2 MinSize => new Vector2(150, 10);
 
 		[SerializeField]
-		private float _x;
+		private float _x = 1;
 
 		[SerializeField]
-		private float _y;
+		private float _y = 1;
 
 		[SerializeField]
-		private float _z;
+		private float _z = 1;
 
 		protected override void DrawConfigurationGUI() {
             _x = RTEditorGUI.FloatField(new GUIContent("X"), _x);

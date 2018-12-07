@@ -5,7 +5,7 @@ using NodeEditorFramework.Utilities;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Scale bias")]
+	[Node (false, "Noise/Operation/Scale bias")]
     public class ScaleBiasNode : TransformerNode {
         private const string ID = "NoiseScaleBiasOperator";
 
@@ -16,14 +16,14 @@ namespace Scenes.NoiseNodeTest.Operator {
         public override Vector2 MinSize => new Vector2(150, 10);
 
 		[SerializeField]
-		private float _scale;
+		private float _scale = 1;
 
 		[SerializeField]
 		private float _bias;
 
 		protected override void DrawConfigurationGUI() {
-            _scale = RTEditorGUI.FloatField(new GUIContent("X"), _scale);
-            _bias = RTEditorGUI.FloatField(new GUIContent("Y"), _bias);
+            _scale = RTEditorGUI.FloatField(new GUIContent("Scale"), _scale);
+            _bias = RTEditorGUI.FloatField(new GUIContent("Bias"), _bias);
 		}
 
 		protected override ModuleBase CreateModule(ModuleBase input) {

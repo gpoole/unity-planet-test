@@ -5,7 +5,7 @@ using NodeEditorFramework.Utilities;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Exponent")]
+	[Node (false, "Noise/Operation/Exponent")]
     public class ExponentNode : TransformerNode {
         private const string ID = "NoiseExponentOperator";
 

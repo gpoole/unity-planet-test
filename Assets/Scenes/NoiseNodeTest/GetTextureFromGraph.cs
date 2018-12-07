@@ -1,8 +1,5 @@
 using System;
 using System.Collections;
-using System.Linq;
-using System.Linq.Expressions;
-using NodeEditorFramework;
 using UnityEngine;
 
 namespace Scenes.NoiseNodeTest {
@@ -19,7 +16,7 @@ namespace Scenes.NoiseNodeTest {
 
         private void Start() {
             // FIXME: should be sharedMaterial?
-            _material = GetComponentInChildren<Renderer>().sharedMaterial;
+            _material = GetComponentInChildren<UnityEngine.Renderer>().sharedMaterial;
 
             if (Application.isEditor) {
                 StartCoroutine(PeriodicUpdate());

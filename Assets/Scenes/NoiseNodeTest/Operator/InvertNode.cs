@@ -3,7 +3,7 @@ using LibNoise.Operator;
 using NodeEditorFramework;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Invert")]
+	[Node (false, "Noise/Operation/Invert")]
     public class InvertNode : TransformerNode {
         private const string ID = "NoiseInvertOperator";
 

@@ -3,7 +3,7 @@ using LibNoise.Operator;
 using NodeEditorFramework;
 
 namespace Scenes.NoiseNodeTest.Operator {
-	[Node (false, "Noise/Operations/Power")]
+	[Node (false, "Noise/Operation/Power")]
     public class PowerNode : CombinerNode {
         private const string ID = "NoisePowerOperator";
 

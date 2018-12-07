@@ -11,16 +11,16 @@ namespace NodeEditorFramework.TextureComposer
 		public override string Title { get { return "Texture Split"; } }
 		public override Vector2 DefaultSize { get { return new Vector2(150, 100); } }
 
-		[ValueConnectionKnob("Texture", Direction.In, "Texture")]
+		[ValueConnectionKnob("Texture", Direction.In, typeof(Texture))]
 		public ValueConnectionKnob textureInputKnob;
 
-		[ValueConnectionKnob("Channel R", Direction.Out, "Channel")]
+		[ValueConnectionKnob("Channel R", Direction.Out, typeof(Channel))]
 		public ValueConnectionKnob channelRKnob;
-		[ValueConnectionKnob("Channel G", Direction.Out, "Channel")]
+		[ValueConnectionKnob("Channel G", Direction.Out, typeof(Channel))]
 		public ValueConnectionKnob channelGKnob;
-		[ValueConnectionKnob("Channel B", Direction.Out, "Channel")]
+		[ValueConnectionKnob("Channel B", Direction.Out, typeof(Channel))]
 		public ValueConnectionKnob channelBKnob;
-		[ValueConnectionKnob("Channel A", Direction.Out, "Channel")]
+		[ValueConnectionKnob("Channel A", Direction.Out, typeof(Channel))]
 		public ValueConnectionKnob channelAKnob;
 
 		public override void NodeGUI()
@@ -44,7 +44,7 @@ namespace NodeEditorFramework.TextureComposer
 
 		public override bool Calculate()
 		{
-			Texture2D tex = textureInputKnob.GetValue<Texture2D>();
+			Texture2D tex = textureInputKnob.GetValue<Texture>() as Texture2D;
 			if (!textureInputKnob.connected() || tex == null)
 			{ // Reset outputs if no texture is available
 				channelRKnob.ResetValue();

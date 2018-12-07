@@ -1,7 +1,7 @@
 using NodeEditorFramework;
 using UnityEngine;
 
-namespace Scenes.NoiseNodeTest.Operator {
+namespace Scenes.NoiseNodeTest {
     public abstract class ConfigurableNode : Node {
 
         public override void NodeGUI() {

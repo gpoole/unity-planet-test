@@ -12,11 +12,11 @@ namespace NodeEditorFramework.TextureComposer
 		public override Vector2 MinSize { get { return new Vector2(150, 50); } }
 		public override bool AutoLayout { get { return true; } }
 
-		[ValueConnectionKnob("Texture", Direction.In, "Texture")]
+		[ValueConnectionKnob("Texture", Direction.In, typeof(Texture))]
 		public ValueConnectionKnob inputKnob;
 
 		[System.NonSerialized]
-		public Texture2D tex;
+		public Texture tex;
 
 		public override void NodeGUI()
 		{
@@ -26,13 +26,16 @@ namespace NodeEditorFramework.TextureComposer
 				RTTextureViz.DrawTexture(tex, 64);
 				GUILayout.Label("'" + tex.name + "'");
 				GUILayout.Label("Size: " + tex.width + "x" + tex.height + "");
-				GUILayout.Label("Format: " + tex.format);
+				var texture2d = tex as Texture2D;
+				if (texture2d) {
+					GUILayout.Label("Format: " + texture2d.format);
+				}
 			}
 		}
 
 		public override bool Calculate()
 		{
-			tex = inputKnob.connected() ? inputKnob.GetValue<Texture2D>() : null;
+			tex = inputKnob.connected() ? inputKnob.GetValue<Texture>() : null;
 			return true;
 		}
 	}

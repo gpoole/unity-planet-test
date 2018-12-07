@@ -11,16 +11,16 @@ namespace NodeEditorFramework.TextureComposer
 		public override string Title { get { return "Channel Bundle"; } }
 		public override Vector2 DefaultSize { get { return new Vector2(150, 100); } }
 
-		[ValueConnectionKnob("Channel R", Direction.In, "Channel")]
+		[ValueConnectionKnob("Channel R", Direction.In, typeof(Channel))]
 		public ValueConnectionKnob channelRKnob;
-		[ValueConnectionKnob("Channel G", Direction.In, "Channel")]
+		[ValueConnectionKnob("Channel G", Direction.In, typeof(Channel))]
 		public ValueConnectionKnob channelGKnob;
-		[ValueConnectionKnob("Channel B", Direction.In, "Channel")]
+		[ValueConnectionKnob("Channel B", Direction.In, typeof(Channel))]
 		public ValueConnectionKnob channelBKnob;
-		[ValueConnectionKnob("Channel A", Direction.In, "Channel")]
+		[ValueConnectionKnob("Channel A", Direction.In, typeof(Channel))]
 		public ValueConnectionKnob channelAKnob;
 
-		[ValueConnectionKnob("Bundled", Direction.Out, "Texture")]
+		[ValueConnectionKnob("Bundled", Direction.Out, typeof(Texture))]
 		public ValueConnectionKnob bundledKnob;
 
 		public override void NodeGUI()
@@ -73,7 +73,7 @@ namespace NodeEditorFramework.TextureComposer
 			}
 
 			bundled.Apply();
-			bundledKnob.SetValue(bundled);
+			bundledKnob.SetValue<Texture>(bundled);
 			return true;
 		}
 	}

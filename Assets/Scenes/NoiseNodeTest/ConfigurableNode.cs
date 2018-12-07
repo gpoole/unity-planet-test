@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Scenes.NoiseNodeTest {
     public abstract class ConfigurableNode : Node {
-
         public override void NodeGUI() {
 	        base.NodeGUI();
 

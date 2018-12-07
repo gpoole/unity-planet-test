@@ -22,8 +22,10 @@ namespace Scenes.NoiseNodeTest.Renderer {
 
 		public override bool Calculate() {
             _input = inputKnob.GetValue<ModuleBase>();
-			var output = GenerateTexture();
-            outputKnob.SetValue<Texture>(output);
+			if (outputKnob.connected()) {
+				var output = GenerateTexture();
+	            outputKnob.SetValue<Texture>(output);
+			}
             return true;
         }
 

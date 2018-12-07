@@ -59,13 +59,6 @@ namespace NodeEditorFramework.TextureComposer
 				Texture2D outputTexture = input as Texture2D;
 				
 				if (outputTexture == null && input is RenderTexture) {
-					var renderTex = input as RenderTexture;
-					var prevActive = RenderTexture.active;
-					RenderTexture.active = renderTex;
-					outputTexture = new Texture2D(input.width, input.height);
-					outputTexture.ReadPixels(new Rect(0, 0, input.width, input.height), 0, 0);
-					outputTexture.Apply();
-					RenderTexture.active = prevActive;
 				}
 
 				if (outputTexture == null) {

@@ -9,7 +9,7 @@ namespace Scenes.NoiseNodeTest.Operator {
 
         public override string GetID => ID;
 
-		public override string Title => "Min value";
+		public override string Title => "Multiply";
 
 		protected override ModuleBase CreateModule(ModuleBase[] inputs) {
 			var lhs = inputs[0];

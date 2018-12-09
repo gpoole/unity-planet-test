@@ -20,6 +20,9 @@ namespace Scenes.NoiseNodeTest.Generator {
         [ValueConnectionKnob("Output", Direction.Out, typeof(ModuleBase))]
         public ValueConnectionKnob outputKnob;
 
+        [ValueConnectionKnob("Seed", Direction.In, typeof(int))]
+        public ValueConnectionKnob _seedInputKnob;
+
         [SerializeField]
         private float _frequency;
 
@@ -41,7 +44,7 @@ namespace Scenes.NoiseNodeTest.Generator {
             _frequency = RTEditorGUI.FloatField(new GUIContent("Frequency"), _frequency);
             _lacunarity = RTEditorGUI.FloatField(new GUIContent("Lacunarity"), _lacunarity);
             _octaves = RTEditorGUI.IntField(new GUIContent("Octaves"), _octaves);
-            _seed = RTEditorGUI.IntField(new GUIContent("Seed"), _seed);
+            _seed = SeedGUIUtils.SeedInput(_seedInputKnob, _seed);
             _quality = (QualityMode) RTEditorGUI.EnumPopup(new GUIContent("Quality"), _quality);
 
             if (GUI.changed) {
@@ -50,7 +53,8 @@ namespace Scenes.NoiseNodeTest.Generator {
         }
 
         public override bool Calculate() {
-            outputKnob.SetValue<ModuleBase>(new RidgedMultifractal(_frequency, _lacunarity, _octaves, _seed, _quality));
+            var seed = SeedGUIUtils.GetSeed(_seedInputKnob, _seed);
+            outputKnob.SetValue<ModuleBase>(new RidgedMultifractal(_frequency, _lacunarity, _octaves, seed, _quality));
             return true;
         }
     }

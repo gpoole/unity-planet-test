@@ -8,8 +8,11 @@ namespace Scenes.NoiseNodeTest.Renderer {
 		[ValueConnectionKnob("Input", Direction.In, typeof(ModuleBase))]
 		public ValueConnectionKnob inputKnob;
 	    
-	    [ValueConnectionKnob("Output", Direction.Out, typeof(Texture))]
+	    [ValueConnectionKnob("Height map;", Direction.Out, typeof(Texture))]
 		public ValueConnectionKnob outputKnob;
+
+	    [ValueConnectionKnob("Normal map", Direction.Out, typeof(Texture))]
+	    public ValueConnectionKnob normalMapOutputKnob;
 
 		[SerializeField]
 		private int _previewSize = 128;
@@ -22,21 +25,22 @@ namespace Scenes.NoiseNodeTest.Renderer {
 
 		public override bool Calculate() {
             _input = inputKnob.GetValue<ModuleBase>();
-			if (outputKnob.connected()) {
-				var output = GenerateTexture();
-	            outputKnob.SetValue<Texture>(output);
-			}
-            return true;
-        }
 
-		private Texture2D GenerateTexture() {
-			if (_input == null) {
-				return null;
-			}
             var noiseRenderer = new Noise2D(_previewSize, _input);
 			ConfigureRenderer(noiseRenderer);
-            return noiseRenderer.GetTexture();
-		}
+            
+			if (outputKnob.connected()) {
+				var output = noiseRenderer.GetTexture();
+	            outputKnob.SetValue<Texture>(output);
+			}
+
+			if (normalMapOutputKnob.connected()) {
+				var output = noiseRenderer.GetNormalMap(1);
+				normalMapOutputKnob.SetValue<Texture>(output);
+			}
+
+            return true;
+        }
 
 		protected abstract void ConfigureRenderer(Noise2D renderer);
 	}
